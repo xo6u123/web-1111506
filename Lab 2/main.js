@@ -5,7 +5,7 @@ $(function(){
     let millisecsPerDay = 24*60*60*1000;
     let Arr= new Array;
     $("#moviedate").change(function(){
-
+        
         $("#moviedate").attr("value",$(this).val()); //賦值
         Arr = $('#moviedate').val().split("-");
         //alert(Arr[1]);
@@ -17,18 +17,18 @@ $(function(){
         startDate.setMinutes(0);
         startDate.setSeconds(0);
         //alert(Arr[1]);
-
+    
     for(var x=0;x<topicCount;x++){
         $("#courseTable").append("<tr>"+
         `<td>${x+1}</td>`+
         `<td>${(new Date(startDate.getTime()+7*x*millisecsPerDay)).toLocaleDateString()}</td>`+
         `<td>${topic[x]}</td>`+
         "</tr>");
-
+        
     }
-
-
+        
+    
     });
-
-
+    
+    
 });
