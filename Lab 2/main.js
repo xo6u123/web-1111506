@@ -4,9 +4,8 @@ $(function(){
     //一秒鐘有1000毫秒//每分鐘60秒、每小時60分鐘、每天24小時
     let millisecsPerDay = 24*60*60*1000;
     let Arr= new Array;
-    var x=0;
     $("#moviedate").change(function(){
-        
+
         $("#moviedate").attr("value",$(this).val()); //賦值
         Arr = $('#moviedate').val().split("-");
         //alert(Arr[1]);
@@ -18,31 +17,18 @@ $(function(){
         startDate.setMinutes(0);
         startDate.setSeconds(0);
         //alert(Arr[1]);
-    
-    for(;x<topicCount;x++){
+
+    for(var x=0;x<topicCount;x++){
         $("#courseTable").append("<tr>"+
         `<td>${x+1}</td>`+
         `<td>${(new Date(startDate.getTime()+7*x*millisecsPerDay)).toLocaleDateString()}</td>`+
         `<td>${topic[x]}</td>`+
         "</tr>");
-        
+
     }
-        
-    
+
+
     });
-    
-    var testInput = document.getElementById("testInput");
-    var submitBtn = document.querySelector(".submitBtn");
-    function FsubmitBtn(value) {
-        var str = "";
-        var submitValue = testInput.value;
-        str = submitValue;
-        $("#courseTable").append("<tr>"+
-        `<td>${(x++)+1}</td>`+
-        `<td>${(new Date(startDate.getTime()+7*(x-1)*millisecsPerDay)).toLocaleDateString()}</td>`+
-        `<td>${str}</td>`+
-        "</tr>");
-        
-    }
-    submitBtn.addEventListener("click", FsubmitBtn);
+
+
 });
